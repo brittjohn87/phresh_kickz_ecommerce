@@ -1,0 +1,49 @@
+<center><h1>Phresh Kickz</h1>
+<p>Don't be that guy!</p>
+
+<div class="row">
+  <% @shoes.each do |shoe| %>
+    <div class="col-md-4">
+      <div class="well center-it">
+        <% if shoe.image.url.nil? == false %>
+          <p><%= image_tag shoe.image.url, class: "storefront-pics" %></p>
+        <% end %>
+        <h3><%= link_to shoe.name, shoe %></h3>
+        <p>Price: <%= number_to_currency shoe.price %></p>
+        <p>Made by: <%= shoe.brand %></p>
+        <p>
+          <a href="#" data-toggle="modal" data-target="#myModal_<%= shoe.id %>">
+            <span class="glyphicon glyphicon-plus"></span> Quick Info
+          </a>
+        </p>
+      </div>
+    </div>
+    <!-- Entered Modal Here -->
+    <div class="modal fade" id="myModal_<%= shoe.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <% if shoe.image.url.nil? == false %>
+          <p><%= image_tag shoe.image.url, class: "storefront-pics" %></p>
+        <% end %>
+        <h3><%= link_to shoe.name, shoe %></h3>
+        <p><%= number_to_currency shoe.price %></p>
+        <p>made by <%= shoe.brand %></p>
+      </div>
+      <div class="modal-footer">
+        <p>
+          <center><p>Cop today before it's too late!</p></center>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- End of Modal -->
+  <% end %>
+</div>
+</center>
+
+
