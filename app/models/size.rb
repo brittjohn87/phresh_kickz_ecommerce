@@ -1,3 +1,4 @@
 class Size < ApplicationRecord
-	belongs_to :shoe
+
+	has_many :categories
 end

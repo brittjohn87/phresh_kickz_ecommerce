@@ -1,22 +1,42 @@
-<center><h1>Phresh Kickz</h1>
-<p>Don't be that guy!</p>
+    <!-- Carousel -->
 
-<div class="row">
+<center><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" data-interval="7000" data-wrap="true" data-pause="null" role="listbox">
+    <div class="item active">
+      <img src="https://cdn5.kicksonfire.com/wp-content/uploads/2017/04/air-jordan-13-playoffs-2017-release-date.png?x77385">
+    </div>
+    <div class="item">
+      <img src="https://cdn5.kicksonfire.com/wp-content/uploads/2017/04/ADIDAS-GAZELLE-PRIMEKNIT-3.jpg?x77385"> 
+    </div>
+
+    <div class="item">
+      <img src="https://stat.ameba.jp/user_images/20140315/15/bigban-go/70/82/j/o0800049112875870847.jpg?caw=800"> 
+    </div>
+
+  </div>
+    
+
+      <!-- Controls -->
+  
+</div></center>
+
+<center><div class="row">
   <% @shoes.each do |shoe| %>
     <div class="col-md-4">
-      <div class="well center-it">
         <% if shoe.image.url.nil? == false %>
-          <p><%= image_tag shoe.image.url, class: "storefront-pics" %></p>
+          <div class="nocolor">
+          <a href="#" data-toggle="modal" data-target="#myModal_<%= shoe.id %>"><%= image_tag shoe.image.url, class: "storefront-pics" %></a>
+          </div>
         <% end %>
-        <h3><%= link_to shoe.name, shoe %></h3>
-        <p>Price: <%= number_to_currency shoe.price %></p>
-        <p>Made by: <%= shoe.brand %></p>
-        <p>
-          <a href="#" data-toggle="modal" data-target="#myModal_<%= shoe.id %>">
-            <span class="glyphicon glyphicon-plus"></span> Quick Info
-          </a>
-        </p>
-      </div>
+        <h4><%= shoe.name %></h4>
     </div>
     <!-- Entered Modal Here -->
     <div class="modal fade" id="myModal_<%= shoe.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -29,13 +49,13 @@
         <% if shoe.image.url.nil? == false %>
           <p><%= image_tag shoe.image.url, class: "storefront-pics" %></p>
         <% end %>
-        <h3><%= link_to shoe.name, shoe %></h3>
-        <p><%= number_to_currency shoe.price %></p>
-        <p>made by <%= shoe.brand %></p>
+        <h4><%= shoe.name %></h4>
+        <h4>Price: <%= number_to_currency shoe.price %></h4>
+        <h4>Brand: <%= shoe.brand %></h4>
       </div>
       <div class="modal-footer">
         <p>
-          <center><p>Cop today before it's too late!</p></center>
+          <center><p id="modalfoot">Cop today before it's too late!</p></center>
         </p>
       </div>
     </div>

@@ -14,11 +14,50 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "font-awesome";
+ 	@import "bootstrap-sprockets";
+ 	@import "bootstrap";
+ 	@import "font-awesome";
+	@import url('https://fonts.googleapis.com/css?family=Rock+Salt|Shadows+Into+Light');
 
  .storefront-pics {
  	height: 200px;
  	width: 300px;
+ 	background-color: white;
+ 	outline: none;
  }
+
+ body {
+ 	padding-top: 50px;
+ }
+
+h1	{
+	font-family: 'Rock Salt', cursive;
+	font-weight: 900;
+}
+
+.navbar {
+	font-family: 'Rock Salt', cursive;
+}
+
+li {
+	font-family: 'Shadows Into Light', cursive;
+	font-weight: 700;
+	font-size: large;
+}
+
+ .nocolor a:visited {
+	outline: none;
+	border: none;
+	background-color: white;
+	color: white;
+}
+
+h4 {
+	font-family: 'Shadows Into Light', cursive;
+	font-size: large;
+	font-weight: 700;
+}
+
+#modalfoot {
+	font-family: 'Rock Salt', cursive;
+}
