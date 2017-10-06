@@ -1,7 +1,6 @@
 class StorefrontController < ApplicationController
   def all_shoes
-  	# @shoes = Shoe.all
-    @shoes = Shoe.distinct(:name)
+  	@shoes = Shoe.all
   end
 
   def shoes_by_category

@@ -1,3 +1,5 @@
+
+
     <!-- Carousel -->
 
 <center><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -54,8 +56,22 @@
         <h4>Brand: <%= shoe.brand %></h4>
       </div>
       <div class="modal-footer">
+        
+      <% if user_signed_in? %> 
+        <center><p id="modalfoot">Cop today before it's too late!</p>
+          <!-- Add To Cart Function -->
         <p>
-          <center><p id="modalfoot">Cop today before it's too late!</p></center>
+          <%= form_tag add_to_cart_path do %>
+            <%= hidden_field_tag :shoe_id, shoe.id %>
+            <%= number_field_tag :quantity, nil, placeholder: "How many?" %>
+            <%= submit_tag "Add to Cart", class: "btn btn-success" %>
+          <% end %>
+        </p>
+
+      <% else %>
+        <center><p id="modalfoot">What are you waiting for?</p>
+          <p>Must be a user to purchase, so sign up today!</p></center> 
+      <% end %>
         </p>
       </div>
     </div>

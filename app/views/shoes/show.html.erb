@@ -16,16 +16,6 @@
 </p>
 
 <p>
-  <strong>Size:</strong>
-  <%= @shoe.size %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @shoe.quantity %>
-</p>
-
-<p>
   <strong>Description:</strong>
   <%= @shoe.description %>
 </p>
@@ -39,6 +29,27 @@
   <strong>Category:</strong>
   <%= @shoe.category_id %>
 </p>
+
+<%= form_with(model: size, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :size %>
+    <%= form.number_field :size, id: :size_size, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.lable :quantity %>
+    <%= form.number_field :quantity, id: :size_quantity, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.hidden_field :shoe_id, id: :size_shoe_id, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
 
 <%= link_to 'Edit', edit_shoe_path(@shoe) %> |
 <%= link_to 'Back', shoes_path %>
