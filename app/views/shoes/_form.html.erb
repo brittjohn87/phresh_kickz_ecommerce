@@ -27,10 +27,12 @@
   </div>
 
   <div class="form-group">
-    <%= form.hidden_field :size, value: nil, class: "form-control" %>
+    <%= form.label :size %>
+    <%= form.number_field :size, value: nil, class: "form-control" %>
   </div>
 
   <div class="form-group">
+    <%= form.label :quantity %>
     <%= form.number_field :quantity, value: nil, class: "form-control" %>
   </div>
 
@@ -47,6 +49,10 @@
   <div class="field">
     <%= form.label :category_id %>
     <%= form.select :category_id, @categories.collect { |c| [ c.name, c.id ]}, {include_blank: "Please select a category" } %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="actions">

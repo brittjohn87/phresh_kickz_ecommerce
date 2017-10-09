@@ -1,7 +1,7 @@
 class ShoesController < ApplicationController
   before_action :set_shoe, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   # GET /shoes
   # GET /shoes.json
@@ -28,7 +28,7 @@ class ShoesController < ApplicationController
   # POST /shoes
   # POST /shoes.json
   def create
-    @shoe = Shoe.new(shoe_params)
+    @hoe = Shoe.new(shoe_params)
 
     respond_to do |format|
       if @shoe.save
@@ -77,6 +77,6 @@ class ShoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shoe_params
-      params.require(:shoe).permit(:name, :price, :size, :quantity, :description, :brand, :category_id, :image)
+      params.require(:shoe).permit(:name, :price, :size, :quantity, :description, :brand, :category_id, :image, :user_id)
     end
 end

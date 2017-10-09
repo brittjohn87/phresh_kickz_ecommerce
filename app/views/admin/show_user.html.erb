@@ -1,0 +1,36 @@
+<h1>Profile for <%= @user.email %>:</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Email: </th>
+			<th>Role: </th>	
+			<th>Action: </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @user.email %></td>
+			<td><%= @user.role %></td>	
+			<td>
+				<% if can? :manage, User %>
+					<%= form_tag edit_user_path do %>
+						<%= select_tag(:role, options_for_select([ "seller", "buyer" ]), :prompt => "Please select") %>
+			  		<%= hidden_field_tag :id, @user.id %>
+			  		<%= submit_tag "Update Role", class: "btn btn-warning" %>
+			  		<%= link_to "Delete User", delete_user_path(id: @user.id), data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+					<% end %>
+				<% end %>	
+			</td>
+		</tr>	
+	</tbody>
+</table>
+
+<%= link_to "Back", all_users_path, class: "btn btn-warning" %>
+
+
+
+
+
+
+

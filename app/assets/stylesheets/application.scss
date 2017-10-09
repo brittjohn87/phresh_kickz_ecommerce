@@ -45,11 +45,18 @@ li {
 	font-size: large;
 }
 
- .nocolor a:visited {
+.nocolor a:visited {
 	outline: none;
 	border: none;
 	background-color: white;
 	color: white;
+}
+
+.outline a:visted {
+	outline: none;
+	border: none;
+	background-color: white;
+	color: white;	
 }
 
 h4 {

@@ -29,8 +29,10 @@
         <td><%= shoe.brand %></td>
         <td><%= shoe.category.name %></td>
         <td><%= link_to 'Show', shoe, class: "btn btn-info" %></td>
+      <% if can? :update, shoe %>
         <td><%= link_to 'Edit', edit_shoe_path(shoe), class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +40,6 @@
 
 <br>
 
-<%= link_to 'New Shoe', new_shoe_path, class: "btn btn-success" %>
+<% if can? :create, Shoe %>
+  <%= link_to 'New Shoe', new_shoe_path, class: "btn btn-success" %>
+<% end %>
