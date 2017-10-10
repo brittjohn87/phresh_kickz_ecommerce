@@ -1,0 +1,14 @@
+
+<div class="panel panel-success">
+	<div class="panel panel-body">
+		<div class="well">
+			<h2>Thank you for your order!</h2>
+				<h4>Grab a pen or screenshot the below info:</h4>
+				<p>
+				  Your order #<%= @order.id %>
+				  If you have any questions regarding this order contact us at:<%= mail_to "customerservice@phreshkickz.com" %>
+				  Your order <%= @order.id %>  will be shipping as soon as possible, <%= @order.user.name %>!
+				</p>
+		</div>
+	</div>
+</div>

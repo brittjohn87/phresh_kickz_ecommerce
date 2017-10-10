@@ -37,6 +37,7 @@
 <center><div class="row">
   <% @shoes.each do |shoe| %>
     <div class="col-md-4">
+      i
         <% if shoe.image.url.nil? == false %>
           <div class="nocolor">
           <a href="#" data-toggle="modal" data-target="#myModal_<%= shoe.id %>"><%= image_tag shoe.image.url, class: "storefront-pics" %></a>

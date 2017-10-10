@@ -35,6 +35,27 @@ class CartController < ApplicationController
   line_items.destroy_all
   end
 
+  def order_complete
+    @order = Order.find(params[:order_id])
+    @amount = (@order.grand_total.to_f.round(2) * 100).to_i
+
+    customer = Stripe::Customer.create(
+      :email => current_user.email,
+      :card => params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      :customer => customer.id,
+      :amount => @amount,
+      :description => 'Fire from Phresh Kickz',
+      :currency => 'usd'
+    )
+
+    rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to cart_path
+  end
+
   def edit_line_item
     # @order = current_order
     line_item = LineItem.find_by(shoe_id: params[:shoe_id].to_i)
