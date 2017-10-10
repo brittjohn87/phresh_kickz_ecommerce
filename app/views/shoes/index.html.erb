@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Shoes</h1>
+<h1>Inventory</h1>
 
 <table class="table">
   <thead>
@@ -28,7 +28,6 @@
         <td><%= shoe.description %></td>
         <td><%= shoe.brand %></td>
         <td><%= shoe.category.name %></td>
-        <td><%= link_to 'Show', shoe, class: "btn btn-info" %></td>
       <% if can? :update, shoe %>
        <% if shoe.user_id == current_user.id %>
         <td><%= link_to 'Edit', edit_shoe_path(shoe), class: "btn btn-warning" %></td>

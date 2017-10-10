@@ -4,6 +4,7 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th>Name</th>
 			<th>Email</th>
 			<th>Role</th>
 		</tr>
@@ -12,6 +13,7 @@
 	<tbody>
 <% @users.each do |u| %>
 	<tr>
+		<td><%= u.name %></td>
 		<td><%= u.email %></td>
 		<td><%= u.role.upcase %></td>
 		<td><%= link_to "Select User", show_user_path(id: u.id), class: "btn btn-warning" %></td>

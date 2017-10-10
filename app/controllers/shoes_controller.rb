@@ -6,7 +6,7 @@ class ShoesController < ApplicationController
   # GET /shoes
   # GET /shoes.json
   def index
-    @shoes = Shoe.all
+    @shoes = Shoe.order(:category_id)
   end
 
   # GET /shoes/1
