@@ -30,8 +30,10 @@
         <td><%= shoe.category.name %></td>
         <td><%= link_to 'Show', shoe, class: "btn btn-info" %></td>
       <% if can? :update, shoe %>
+       <% if shoe.user_id == current_user.id %>
         <td><%= link_to 'Edit', edit_shoe_path(shoe), class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% end %>
       <% end %>
       </tr>
     <% end %>

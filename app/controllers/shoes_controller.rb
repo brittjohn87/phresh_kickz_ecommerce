@@ -28,7 +28,7 @@ class ShoesController < ApplicationController
   # POST /shoes
   # POST /shoes.json
   def create
-    @hoe = Shoe.new(shoe_params)
+    @shoe = Shoe.new(shoe_params)
 
     respond_to do |format|
       if @shoe.save
