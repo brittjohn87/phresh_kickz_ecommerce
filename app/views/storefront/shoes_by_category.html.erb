@@ -44,7 +44,11 @@
           <a href="#" data-toggle="modal" data-target="#myModal_<%= shoe.id %>"><%= image_tag shoe.image.url, class: "storefront-pics" %></a>
           </div>
         <% end %>
+      <% if shoe.quantity == 0 %>
+        <h4 class="sold_out">Currently Sold Out!</h4>
+      <% elsif %>
         <h4><%= shoe.name %></h4>
+      <% end %>
     </div>
     <!-- Entered Modal Here -->
     <div class="modal fade" id="myModal_<%= shoe.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -58,14 +62,18 @@
           <p><%= image_tag shoe.image.url, class: "storefront-pics" %></p>
         <% end %>
         <h4><%= shoe.name %></h4>
+      <% if shoe.quantity == 0 %>
+        <h4 class="sold_out">Sold Out!</h4>
+      <% elsif %> 
         <h4>Size: <%= shoe.size %></h4>
         <h4>Price: <%= number_to_currency shoe.price %></h4>
+      
         <h4>Questions?</h4>
         <h4>Contact Seller @ <%= mail_to shoe.user.email %></h4>
       </div>
       <div class="modal-footer">
-        <p>
-          <% if user_signed_in? %> 
+        
+      <% if user_signed_in? %> 
         <center><p id="modalfoot">Cop today before it's too late!</p>
           <!-- Add To Cart Function -->
         <p>
@@ -75,10 +83,11 @@
             <%= submit_tag "Add to Cart", class: "btn btn-success" %>
           <% end %>
         </p>
-
+      
       <% else %>
         <center><p id="modalfoot">What are you waiting for?</p>
           <p>Must be a user to purchase, so sign up today!</p></center> 
+      <% end %>
       <% end %>
         </p>
       </div>
