@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   get 'sizes' => 'storefront#shoes_by_size'
 
+  get 'contact_us' => 'storefront#contact_us'
+
   
 
   devise_for :users

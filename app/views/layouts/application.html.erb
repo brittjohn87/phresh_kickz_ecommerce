@@ -51,6 +51,9 @@
             </ul>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to "Contact Us", contact_us_path %></li>
+      </ul>
     <!-- End -->
     <!-- Right Hand Side links and dropdown -->
     <% if user_signed_in? %>
@@ -111,11 +114,15 @@
       <p><i class="fa fa-instagram fa-lg"></i>
         <i class="fa fa-facebook-square fa-lg"></i>
         <i class="fa fa-twitter fa-lg"></i></p>
-        Phresh Kickz copyright &copy 2017
+        Phresh Kickz copyright&copy 2017
     </center>
     <br />
   </div>
 </nav>
+
+<!-- api for google maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_api_key'] %>">
+</script>
 
   </body>
 </html>
