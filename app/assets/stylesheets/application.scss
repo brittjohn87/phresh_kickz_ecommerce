@@ -46,6 +46,22 @@ li {
 	font-size: large;
 }
 
+p {
+	font-family: 'Shadows Into Light', cursive;
+	font-weight: 700;
+	font-size: large;
+}
+
+th {
+	font-family: 'Rock Salt', cursive;
+}
+
+td {
+	font-family: 'Shadows Into Light', cursive;
+	font-size: large;
+	font-weight: 700;
+}
+
 .nocolor a:visited {
 	outline: none;
 	border: none;
@@ -60,9 +76,19 @@ li {
 	color: white;	
 }
 
-h4 {
+h2 {
+	font-family: 'Rock Salt', cursive;
+}
+
+.form-group {
 	font-family: 'Shadows Into Light', cursive;
 	font-size: large;
+	font-weight: 700;
+}
+
+h4 {
+	font-family: 'Shadows Into Light', cursive;
+	font-size: medium;
 	font-weight: 700;
 }
 

@@ -19,7 +19,7 @@
 $(document).ready(function (){
 
     function initialize() {
-      var myCoords = new google.maps.LatLng(33.784624, -84.422030);
+      var myCoords = new google.maps.LatLng(33.784756, -84.421652);
       var mapOptions = {
       center: myCoords,
       zoom: 18,
@@ -30,23 +30,25 @@ $(document).ready(function (){
                 mapOptions);    
 
       
-      var marker = new google.maps.Marker({
-  		position: myCoords,
-  		map: map,
-  		title: 'Stronbox West'
-			});
-    
-    // 	var image = "<%= asset_path 'bape-nmd.png'%>";
-    //   var marker = new google.maps.Marker({
-			 //  position: myCoords,
-			 //  map: map,
-			 //  title: 'Strong Box',
-			 //  icon: image,
-			 //  animation: google.maps.Animation.DROP
-				// });
+   //    var marker = new google.maps.Marker({
+  	// 	position: myCoords,
+  	// 	map: map,
+  	// 	title: 'Stronbox West'
+			// });
 
-      var contentString = '<h2>Strongbox West</h2>' +
-   			'<p>Where all your dreams come true.</p>';
+
+    
+    	var image = "<%= asset_path 'shoe_icon.jpg'%>";
+      var marker = new google.maps.Marker({
+			  position: myCoords,
+			  map: map,
+			  title: 'Phresh Kickz',
+			  icon: image,
+			  animation: google.maps.Animation.BOUNCE
+				});
+
+      var contentString = '<h2>Phresh Kickz</h2>' +
+   			'<p>Served Daily!</p>';
 
  			var infowindow = new google.maps.InfoWindow({
    		content: contentString

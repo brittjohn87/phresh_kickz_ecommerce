@@ -22,6 +22,8 @@ class CartController < ApplicationController
     line_items = LineItem.all
     @order = Order.create(user_id: current_user.id, subtotal: 0)
 
+    puts "********************************"
+
     line_items.each do |line_item|
       line_item.shoe.update(quantity: (line_item.shoe.quantity - line_item.quantity))
       @order.order_items[line_item.shoe_id] = line_item.quantity 

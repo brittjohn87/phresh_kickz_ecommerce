@@ -32,7 +32,7 @@ class ShoesController < ApplicationController
 
     respond_to do |format|
       if @shoe.save
-        format.html { redirect_to @shoe, notice: 'Shoe was successfully created.' }
+        format.html { redirect_to backroom_path, notice: 'Shoe was successfully added to inventory.' }
         format.json { render :show, status: :created, location: @shoe }
       else
         format.html { render :new }
@@ -44,9 +44,11 @@ class ShoesController < ApplicationController
   # PATCH/PUT /shoes/1
   # PATCH/PUT /shoes/1.json
   def update
+
     respond_to do |format|
       if @shoe.update(shoe_params)
-        format.html { redirect_to @shoe, notice: 'Shoe was successfully updated.' }
+      
+        format.html { redirect_to backroom_path, notice: 'Inventory was successfully updated.' }
         format.json { render :show, status: :ok, location: @shoe }
       else
         format.html { render :edit }

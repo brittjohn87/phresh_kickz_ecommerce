@@ -1,14 +1,15 @@
-
 <div class="panel panel-success">
-	<div class="panel panel-body">
-		<div class="well">
+	<div class="panel-header">
+		<div class="panel-body">
+			<div class="well">
 			<h2>Thank you for your order!</h2>
 				<h4>Grab a pen or screenshot the below info:</h4>
 				<p>
-				  Your order #<%= @order.id %>
+				  Your order # is: #<%= @order.id %>
 				  If you have any questions regarding this order contact us at:<%= mail_to "customerservice@phreshkickz.com" %>
-				  Your order <%= @order.id %>  will be shipping as soon as possible, <%= @order.user.name %>!
+				  Your order #<%= @order.id %> will be shipping as soon as possible, and thank you <%= @order.user.name %>, for choosing Phresh Kickz!
 				</p>
+			</div>
 		</div>
 	</div>
 </div>
